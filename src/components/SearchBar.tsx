@@ -37,11 +37,7 @@ export default function SearchBar() {
         placeholder="Looking for..."
         inputProps={{ "aria-label": "search google maps" }}
       />
-      <IconButton
-        type="submit"
-        className={classes.iconButton}
-        aria-label="search"
-      >
+      <IconButton className={classes.iconButton} aria-label="search">
         <SearchIcon />
       </IconButton>
     </Paper>
