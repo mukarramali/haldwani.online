@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: "-45px 10px 10px 10px",
     },
     categoryTextContent: {
-      padding: 15,
+      padding: 20,
     },
   })
 );
@@ -37,7 +37,7 @@ const Category = (props: any) => {
       <Paper className={classes.paper} elevation={4}>
         <Grid container direction="row">
           <Grid item xs={3}>
-            <img src={props.icon} alt={props.title} />
+            <img src={require(`../images/${props.icon}`)} alt={props.title} />
           </Grid>
           <Grid
             item
@@ -66,10 +66,44 @@ const Category = (props: any) => {
 
 const categoryData: Category[] = [
   {
-    gradientBackground: "linear-gradient(45deg, #bfc932 30%, #f4fc66 90%)",
-    icon: require("../images/groceries.png"),
+    icon: "groceries.png",
     title: "Groceries",
     subtitle: "Freshness home delivered",
+  },
+  {
+    icon: "pharmacy.png",
+    title: "Pharmacy",
+    subtitle: "Get help for medicines",
+  },
+  {
+    icon: "women-clothing.png",
+    title: "Women's Clothing",
+    subtitle: "Traditional designs curated",
+  },
+  {
+    icon: "men-clothing.png",
+    title: "Men's Clothing",
+    subtitle: "Traditional designs curated",
+  },
+  {
+    icon: "women-shoes.png",
+    title: "Women's Shoes",
+    subtitle: "Shop branded designs",
+  },
+  {
+    icon: "men-shoes.png",
+    title: "Men's Shoes",
+    subtitle: "Shop branded designs",
+  },
+  {
+    icon: "bakery.png",
+    title: "Bakery",
+    subtitle: "Fresh local bakery",
+  },
+  {
+    icon: "gifts.png",
+    title: "Gifts",
+    subtitle: "For every occasion",
   },
 ];
 
@@ -78,8 +112,8 @@ export default function Categories() {
 
   return (
     <Grid container justify="space-evenly" className={classes.root}>
-      {[0, 1, 2, 3].map((category) => (
-        <Category {...categoryData[category]} />
+      {categoryData.map((category) => (
+        <Category {...category} />
       ))}
     </Grid>
   );
