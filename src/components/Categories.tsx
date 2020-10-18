@@ -7,14 +7,19 @@ import {
   Typography,
 } from "@material-ui/core";
 import React from "react";
+import Category from "../types/Category";
+import categoriesData from "../utils/categoriesData";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {},
+    listRoot: {
+      marginTop: -45,
+      paddingLeft: 10,
+      paddingRight: 10,
+    },
     paper: {
       padding: 5,
-      minWidth: 200,
-      margin: "-45px 10px 10px 10px",
+      minWidth: 50,
     },
     categoryTextContent: {
       padding: 20,
@@ -22,15 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-interface Category {
-  icon?: string;
-  gradientBackground?: string;
-  title: string;
-  subtitle: string;
-  link?: string;
-}
-
-const Category = (props: any) => {
+const CategoryCard = (props: Category) => {
   const classes = useStyles();
   return (
     <Grid item xs={3}>
@@ -64,56 +61,18 @@ const Category = (props: any) => {
   );
 };
 
-const categoryData: Category[] = [
-  {
-    icon: "groceries.png",
-    title: "Groceries",
-    subtitle: "Freshness home delivered",
-  },
-  {
-    icon: "pharmacy.png",
-    title: "Pharmacy",
-    subtitle: "Get help for medicines",
-  },
-  {
-    icon: "women-clothing.png",
-    title: "Women's Clothing",
-    subtitle: "Traditional designs curated",
-  },
-  {
-    icon: "men-clothing.png",
-    title: "Men's Clothing",
-    subtitle: "Traditional designs curated",
-  },
-  {
-    icon: "women-shoes.png",
-    title: "Women's Shoes",
-    subtitle: "Shop branded designs",
-  },
-  {
-    icon: "men-shoes.png",
-    title: "Men's Shoes",
-    subtitle: "Shop branded designs",
-  },
-  {
-    icon: "bakery.png",
-    title: "Bakery",
-    subtitle: "Fresh local bakery",
-  },
-  {
-    icon: "gifts.png",
-    title: "Gifts",
-    subtitle: "For every occasion",
-  },
-];
-
 export default function Categories() {
   const classes = useStyles();
 
   return (
-    <Grid container justify="space-evenly" className={classes.root}>
-      {categoryData.map((category) => (
-        <Category {...category} />
+    <Grid
+      container
+      justify="space-evenly"
+      className={classes.listRoot}
+      spacing={2}
+    >
+      {categoriesData.map((category) => (
+        <CategoryCard {...category} />
       ))}
     </Grid>
   );
