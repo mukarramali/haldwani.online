@@ -11,11 +11,13 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import AppBar from "@material-ui/core/AppBar/AppBar";
 
+import { gradientRed } from "../utils/colors";
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     toolbar: {
       flexGrow: 1,
-      background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+      background: gradientRed,
       border: 0,
       borderRadius: 3,
       boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
@@ -46,7 +48,7 @@ export default function Header() {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" className={classes.title}>
-          Haldwani.Online
+          Haldwani Online
         </Typography>
         <Button color="inherit">Login</Button>
       </Toolbar>
