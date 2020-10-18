@@ -11,3 +11,5 @@ const businessesData: Business[] = [
     tags: ["shopping", "decor"],
   },
 ];
+
+export default businessesData;

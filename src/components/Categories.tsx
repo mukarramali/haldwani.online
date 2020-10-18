@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     listRoot: {
       marginTop: -45,
+      marginBottom: 10,
       paddingLeft: 10,
       paddingRight: 10,
     },

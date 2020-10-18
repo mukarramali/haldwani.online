@@ -3,6 +3,8 @@ import "./App.css";
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import Categories from "./components/Categories";
+import Businesses from "./components/Businesses";
+import { Divider } from "@material-ui/core";
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <Header />
       <Banner />
       <Categories />
+      <Divider />
+      <Businesses />
     </div>
   );
 }
