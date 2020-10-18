@@ -13,7 +13,11 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {},
     paper: {
       padding: 5,
+      minWidth: 200,
       margin: "-45px 10px 10px 10px",
+    },
+    categoryTextContent: {
+      padding: 15,
     },
   })
 );
@@ -33,11 +37,26 @@ const Category = (props: any) => {
       <Paper className={classes.paper} elevation={4}>
         <Grid container direction="row">
           <Grid item xs={3}>
-            <img src={props.icon} />
+            <img src={props.icon} alt={props.title} />
           </Grid>
-          <Grid item xs={9}>
-            <Typography variant="h5">{props.title}</Typography>
-            <Typography variant="subtitle2">{props.subtitle}</Typography>
+          <Grid
+            item
+            xs={9}
+            container
+            direction="column"
+            justify="center"
+            className={classes.categoryTextContent}
+          >
+            <Grid item>
+              <Typography variant="h5" align="left">
+                {props.title}
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="subtitle2" align="left">
+                {props.subtitle}
+              </Typography>
+            </Grid>
           </Grid>
         </Grid>
       </Paper>
