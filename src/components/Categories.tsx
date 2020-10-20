@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
 const CategoryCard = (props: Category) => {
   const classes = useStyles();
   return (
-    <Grid item xs={3}>
+    <Grid item xs={12} sm={3}>
       <Paper className={classes.paper} elevation={4}>
         <Grid container direction="row">
           <Grid item xs={3}>
